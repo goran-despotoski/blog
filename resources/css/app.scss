@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+@layer base {
+    body {
+        @apply leading-6;
+    }
+
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select {
+        @apply rounded-sm w-full mb-2 border-gray-300 text-black disabled:text-gray-500 disabled:bg-zinc-50;
+
+    }
+
+    [type='checkbox'],
+    [type='radio'] {
+        @apply rounded-sm border-gray-300;
+    }
+
+    button[type="submit"] {
+        @apply bg-sky-700 text-white hover:bg-sky-600 rounded px-20 py-3 w-auto;
+    }
+    .is-invalid {
+        @apply border border-red-400;
+    }
+
+    label {
+        @apply mx-1 my-1 font-bold;
+    }
+
+    label span.hint {
+        @apply font-normal inline-block w-full mx-1
+    }
+
+    .form-element {
+        @apply mb-2;
+    }
+    .alert {
+        &.alert-danger {
+            @apply text-red-700;
+        }
+    }
+
+    table {
+        @apply table-auto w-full shadow-sm bg-white leading-normal mt-4;
+    }
+
+    table tr {
+        th {
+            @apply bg-red-900 text-white text-left px-4 py-1
+        }
+        td {
+            @apply px-4 py-1 border border-x-indigo-100
+        }
+    }
+
+    .main-title {
+        @apply strikethrough;
+    }
+
+    h1 {
+        @apply text-3xl pb-5;
+    }
+
+    h2 {
+        @apply text-2xl pb-5;
+    }
+
+    h3 {
+        @apply text-xl pb-5;
+    }
+
+    a {
+        @apply text-indigo-700;
+    }
+}
