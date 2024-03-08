@@ -20,7 +20,7 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-        $title = $this->faker->title();
+        $title = $this->faker->text(50);
 
         return [
             'user_id' => User::factory()->create(),
