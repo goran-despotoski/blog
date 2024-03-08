@@ -1,4 +1,4 @@
-# Blog Systen
+# Blog System
 This is a simple blog system made for my own website and for showcasing code structure. Just follow the setup 
 instructions below to try it out. It's just a simple showcase of coding practices and is used on my personal blog.
 
@@ -44,12 +44,16 @@ Happy blogging!
 
 ### Code style checks
 Run command to do Code Style checks.
+
 `docker compose exec app ./vendor/bin/pint`
+
 ### Static Analysis
 Run command to do static analysis of the code:
+
 `docker compose exec app ./vendor/bin/phpstan analyse`
 ### Unit and Feature Testing
 Run command to run all unit tests:
+
 `docker compose exec app php artisan test`
 
 
