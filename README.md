@@ -34,10 +34,12 @@ Add one record to your hosts file:
 
 `127.0.0.1     blog.localhost`
 
-Visit http://blog.localhost page on your host system and enjoy viewing the blog. To populate 
-with a dummy category, run the next seeder:
+Visit http://localhost:8802/ url on your host system and enjoy viewing the blog. To populate 
+with dummy posts, run the next seeder:
 
-`docker compose exec app php artisan db:seed BlogSeeder`
+`docker compose exec app php artisan db:seed --class=BlogSeeder`
+
+
 
 
 
