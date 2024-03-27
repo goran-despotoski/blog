@@ -1,7 +1,9 @@
 <x-public-layout>
     <div class="">
-        <h1>{{__('Posts')}}</h1>
+
+        <h1>{{ $team->owner->name }}</h1>
         <div class="blog-sinopsis">{{__('Blog dedicated to Software Development, Coding, DevOps and all things techy.')}}</div>
+
         @if ($posts->count() == 0)
             <div class="text-center text-red-600">{{__('Oh oh. No blog posts found.')}}</div>
         @else

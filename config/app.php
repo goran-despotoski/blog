@@ -18,6 +18,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'current_team_id' => env('CURRENT_TEAM_ID'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

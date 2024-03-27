@@ -6,7 +6,7 @@ use App\Models\Post;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class BlogSeeder extends Seeder
+class RandomBlogSeeder extends Seeder
 {
     /**
      * Run the database seeds.
