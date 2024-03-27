@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\PostService;
 use App\Services\TeamService;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -13,10 +14,10 @@ class PostController extends Controller
     ) {
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $posts = $this->postService->getPublishedPosts();
-        $team = $this->teamService->getTeamById(config('app.current_team_id'));
+        $team = $this->teamService->getTeamById($request->header('current-team-id') ?? config('app.current_team_id'));
 
         return view('posts.index', ['posts' => $posts, 'team' => $team]);
     }
