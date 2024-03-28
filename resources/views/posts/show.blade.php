@@ -1,11 +1,13 @@
 <x-public-layout>
     <div class="">
         <h1>{{__('Post')}}</h1>
+        <div class="blog-sinopsis">{{__('Blog dedicated to IT, Coding, Devops and all things techy.')}}</div>
+
         <div class="back-to-posts">
             <a href="{{route('posts')}}">{{__('Back to posts')}}</a>
         </div>
 
-        <div class="blog-sinopsis">{{__('Blog dedicated to IT, Coding, Devops and all things techy.')}}</div>
+
         <div class="post-list-item">
 
             <h2>{{$post->title}}</h2>
@@ -16,7 +18,7 @@
                 </div>
             </div>
             <div class="content">
-                {!! $post->content !!}
+                {!! $post->content_html !!}
             </div>
         </div>
     </div>

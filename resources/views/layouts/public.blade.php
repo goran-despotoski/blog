@@ -26,6 +26,13 @@
     <main class="container mx-auto">
     {{ $slot }}
     </main>
+
 </div>
+<div class="relative sm:flex sm:justify-center sm:items-center min-h-20 bg-dots-darker bg-center bg-gray-100 selection:bg-red-500 selection:text-white">
+    <div class="block container mx-auto text-center">
+        2024
+    </div>
+</div>
+<x-analytics :analytics="$analytics"></x-analytics>
 </body>
 </html>

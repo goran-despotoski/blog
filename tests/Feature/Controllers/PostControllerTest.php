@@ -3,6 +3,7 @@
 namespace Tests\Feature\Controllers;
 
 use App\Models\Post;
+use App\Models\Team;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 

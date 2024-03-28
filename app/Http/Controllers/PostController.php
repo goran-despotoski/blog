@@ -3,19 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Services\PostService;
+use App\Services\TeamService;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function __construct(
-        private PostService $postService
+        private PostService $postService,
+        private TeamService $teamService
     ) {
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $posts = $this->postService->getPublishedPosts();
+        $team = $this->teamService->getTeamById($request->header('current-team-id') ?? config('app.current_team_id'));
 
-        return view('posts.index', ['posts' => $posts]);
+        return view('posts.index', ['posts' => $posts, 'team' => $team]);
     }
 
     public function show(string $postSlug)

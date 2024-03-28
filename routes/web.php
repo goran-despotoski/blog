@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AnalyticsController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\PostController as PublicPostController;
@@ -31,8 +32,10 @@ Route::middleware([
         Route::resources([
             'posts' => PostController::class,
             'media' => MediaController::class,
+            'analytics' => AnalyticsController::class
         ]);
         Route::get('posts/{post}/delete', [PostController::class, 'delete'])->name('posts.delete');
+        Route::get('analytics/{analytic}/delete', [AnalyticsController::class, 'delete'])->name('analytics.delete');
     });
 
 });

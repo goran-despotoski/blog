@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Tiptap\Editor;
 
 /**
  * @property int $user_id
@@ -28,6 +29,8 @@ class Post extends Model
         'published_at_time',
         'published_at_readable',
         'published_at_date_readable',
+        'content_html',
+        'content_simple_text',
     ];
 
     public function user(): BelongsTo
@@ -55,9 +58,21 @@ class Post extends Model
         return $this->published_at->format('F d, Y');
     }
 
+    public function getContentHtmlAttribute()
+    {
+        return (new Editor)->setContent($this->content)->getHTML();
+    }
+
+    public function getContentSimpleTextAttribute()
+    {
+        return (new Editor)->setContent($this->content)->getText();
+    }
+
     public function scopePublished(Builder $query)
     {
         $query->where('published_at', '<', Carbon::now()->toDateTimeString())
             ->where('status', 'published');
     }
+
+
 }

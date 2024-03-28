@@ -25,8 +25,8 @@
                         <label for="content">
                             {{__('Content')}}
                         </label>
-                        <textarea type="text" name="content"
-                                  class="@error('content') is-invalid @enderror">{{old('content')}}</textarea>
+                        <input type="hidden" name="content" class="text-editor-content" value="{{old('content')}}" />
+                        <div class="tiptap-text-editor"></div>
                         @error('content')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
