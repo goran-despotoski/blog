@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="content">
-                {!! $post->content !!}
+                {!! $post->content_html !!}
             </div>
         </div>
     </div>

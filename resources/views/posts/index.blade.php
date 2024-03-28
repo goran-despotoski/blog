@@ -12,7 +12,7 @@
                 <div class="date-holder"><time datetime="{{$post->published_at}}">{{$post->published_at_date_readable}}</time></div>
                 <h2>{{$post->title}}</h2>
                 <div class="content">
-                    {{ \Str::limit($post->content, '150', '...')}}
+                    {{ \Str::limit($post->content_simple_text, '150', '...')}}
                 </div>
                 <div class="read-mode-holder">
                     <a href="{{route('posts.show', ['postSlug' => $post->slug])}}">{{__('Read more')}}</a>
